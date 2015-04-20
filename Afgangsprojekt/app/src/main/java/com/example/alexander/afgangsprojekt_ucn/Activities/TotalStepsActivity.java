@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.maaaarckyo.donagoandroid.Models.ActivityDay;
-import com.example.maaaarckyo.donagoandroid.R;
+import com.example.alexander.afgangsprojekt_ucn.Models.ActivityDay;
+import com.example.alexander.afgangsprojekt_ucn.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;

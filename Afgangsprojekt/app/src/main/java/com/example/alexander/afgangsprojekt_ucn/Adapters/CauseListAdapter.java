@@ -8,8 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.maaaarckyo.donagoandroid.Models.Cause;
-import com.example.maaaarckyo.donagoandroid.R;
+import com.example.alexander.afgangsprojekt_ucn.Models.Cause;
+import com.example.alexander.afgangsprojekt_ucn.R;
 
 import java.util.List;
 

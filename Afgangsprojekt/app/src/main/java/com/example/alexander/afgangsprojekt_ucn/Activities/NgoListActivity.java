@@ -11,9 +11,9 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.maaaarckyo.donagoandroid.Adapters.NgoListAdapter;
-import com.example.maaaarckyo.donagoandroid.Models.NGO;
-import com.example.maaaarckyo.donagoandroid.Utility.UtilityMethods;
+import com.example.alexander.afgangsprojekt_ucn.Adapters.NgoListAdapter;
+import com.example.alexander.afgangsprojekt_ucn.Models.NGO;
+import com.example.alexander.afgangsprojekt_ucn.Utility.UtilityMethods;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;

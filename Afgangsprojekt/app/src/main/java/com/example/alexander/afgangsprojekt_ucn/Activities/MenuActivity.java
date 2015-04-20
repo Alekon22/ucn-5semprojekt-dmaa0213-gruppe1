@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.example.maaaarckyo.donagoandroid.Models.ActivityDay;
-import com.example.maaaarckyo.donagoandroid.R;
+import com.example.alexander.afgangsprojekt_ucn.Models.ActivityDay;
+import com.example.alexander.afgangsprojekt_ucn.R;
 
 import java.util.ArrayList;
 

@@ -12,9 +12,9 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.maaaarckyo.donagoandroid.Models.Cause;
-import com.example.maaaarckyo.donagoandroid.R;
-import com.example.maaaarckyo.donagoandroid.Utility.UtilityMethods;
+import com.example.alexander.afgangsprojekt_ucn.Models.Cause;
+import com.example.alexander.afgangsprojekt_ucn.R;
+import com.example.alexander.afgangsprojekt_ucn.Utility.UtilityMethods;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;

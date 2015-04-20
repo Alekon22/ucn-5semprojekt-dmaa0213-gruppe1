@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.maaaarckyo.donagoandroid.Models.ActivityDay;
-import com.example.maaaarckyo.donagoandroid.R;
+import com.example.alexander.afgangsprojekt_ucn.Models.ActivityDay;
+import com.example.alexander.afgangsprojekt_ucn.R;
 
 import java.util.ArrayList;
 

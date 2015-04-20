@@ -14,11 +14,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.maaaarckyo.donagoandroid.Adapters.CauseListAdapter;
-import com.example.maaaarckyo.donagoandroid.Models.Cause;
-import com.example.maaaarckyo.donagoandroid.Models.NGO;
-import com.example.maaaarckyo.donagoandroid.R;
-import com.example.maaaarckyo.donagoandroid.Utility.UtilityMethods;
+import com.example.alexander.afgangsprojekt_ucn.Adapters.CauseListAdapter;
+import com.example.alexander.afgangsprojekt_ucn.Models.Cause;
+import com.example.alexander.afgangsprojekt_ucn.Models.NGO;
+import com.example.alexander.afgangsprojekt_ucn.R;
+import com.example.alexander.afgangsprojekt_ucn.Utility.UtilityMethods;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
