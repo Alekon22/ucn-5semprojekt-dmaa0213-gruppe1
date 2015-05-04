@@ -24,6 +24,8 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import org.w3c.dom.Text;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -37,6 +39,7 @@ public class NgoInformationActivity extends Activity
     private ImageView iwHeader;
 
     private TextView twNgoDescription;
+    private TextView twNgoDonatedMoney;
 
     private LinearLayout causeListLayout;
 
@@ -53,11 +56,12 @@ public class NgoInformationActivity extends Activity
         iwHeader = (ImageView)findViewById(R.id.causeImage);
         causeListLayout = (LinearLayout)findViewById(R.id.causeList);
         twNgoDescription = (TextView)findViewById(R.id.twNgoDescription);
+        twNgoDonatedMoney = (TextView)findViewById(R.id.donatedMoney);
 
         clickedNgo = getIntent().getParcelableExtra("clickedItem");
 
         twNgoDescription.setText(clickedNgo.getDescription());
-
+        twNgoDonatedMoney.setText(String.valueOf(UtilityMethods.GetTotalDonatationsForNgo(clickedNgo.getObjectId())));
         // Get the saved image path and decode it into an image
         Bitmap bmp = null;
         String filename = getIntent().getStringExtra("image");

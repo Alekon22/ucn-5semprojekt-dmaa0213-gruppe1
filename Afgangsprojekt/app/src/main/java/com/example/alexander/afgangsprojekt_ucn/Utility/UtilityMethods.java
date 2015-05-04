@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import com.example.alexander.afgangsprojekt_ucn.Models.Cause;
+import com.example.alexander.afgangsprojekt_ucn.Models.NGO;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -85,7 +86,7 @@ public class UtilityMethods
 
         return donatedAmount;
     }
-
+    // Gets the current users donation for a selected cause
     public static List<ParseObject> GetCurrentUserDonationsForCause(String causeObjectId)
     {
         ParseObject cause = ParseObject.createWithoutData("Cause",
@@ -107,7 +108,7 @@ public class UtilityMethods
         }
         return null;
     }
-
+    // Gets the total amount of steps for a selected cause
     public static Number GetTotalStepsForCause(String causeObjectId)
     {
         ParseObject cause = ParseObject.createWithoutData("Cause", causeObjectId);
@@ -132,6 +133,34 @@ public class UtilityMethods
         }
 
         return steps;
+    }
+
+    public static Number GetTotalDonatationsForNgo(String ngoObjectId)
+    {
+        double donatedAmount = 0;
+        ParseObject currentNgo = ParseObject.createWithoutData("NGO", ngoObjectId);
+
+        try
+        {
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Donation");
+            query.whereEqualTo("ngo", currentNgo);
+            query.setCachePolicy(ParseQuery.CachePolicy.CACHE_ELSE_NETWORK);
+            query.setMaxCacheAge(TimeUnit.HOURS.toMillis(1));
+            List<ParseObject> donationList = query.find();
+
+            for (ParseObject item : donationList)
+            {
+                donatedAmount += item.getNumber("donationAmount").doubleValue();
+            }
+
+            return donatedAmount;
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return donatedAmount;
     }
 
 }
