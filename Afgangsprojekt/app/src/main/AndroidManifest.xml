@@ -26,7 +26,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.gms.fitness.API_KEY"
-            android:value="AIzaSyBlmXpOq_OICp_aH6cIUH54S5QKG2dEZDM" />
+            android:value="AIzaSyB6JgaBCJ5bn2pqzkRkwu_1fPGzR0D7Uhs" />
 
         <activity
             android:name=".Activities.MainActivity"
