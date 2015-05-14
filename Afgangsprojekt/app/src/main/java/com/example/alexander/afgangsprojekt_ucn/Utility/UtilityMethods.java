@@ -135,7 +135,7 @@ public class UtilityMethods
         return steps;
     }
 
-    public static Number GetTotalDonatationsForNgo(String ngoObjectId)
+    public static Number GetTotalDonationsForNgo(String ngoObjectId)
     {
         double donatedAmount = 0;
         ParseObject currentNgo = ParseObject.createWithoutData("NGO", ngoObjectId);
