@@ -142,6 +142,7 @@ public class UtilityMethods
 
         try
         {
+            //test
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Donation");
             query.whereEqualTo("ngo", currentNgo);
             query.setCachePolicy(ParseQuery.CachePolicy.CACHE_ELSE_NETWORK);
