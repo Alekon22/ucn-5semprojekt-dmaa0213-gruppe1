@@ -27,6 +27,7 @@
     <string name="tw_cause_contribution">Dit bidrag</string>
     <string name="tw_cause_contribution_other">Andres bidrag</string>
     <string name="btn_support_cause">Støt Sag</string>
+    <string name="tw_top_donated_causes">Top 3 formål</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -34,5 +35,6 @@
     <string name="title_activity_user_profile">UserProfileActivity</string>
     <string name="title_activity_list_views">ListViews</string>
     <string name="title_activity_object_tran">ObjectTran</string>
+    <string name="title_activity_user_donations">UserDonationsActivity</string>
 
 </resources>

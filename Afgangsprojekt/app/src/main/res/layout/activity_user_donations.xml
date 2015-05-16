@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alexander.afgangsprojekt_ucn.Activities.UserDonationsActivity">
+
+    <FrameLayout
+        android:layout_height="100dp"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/headerFrameLayout">
+
+        <ImageView
+            android:id="@+id/SupportingCauseImage"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/totalDonatedMoney"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:shadowDx="-2"
+            android:shadowDy="2"
+            android:shadowRadius="0.01"
+            android:gravity="center"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:singleLine="true"
+            android:text="Placeholder"/>
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerFrameLayout">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#90ffffff"
+                android:id="@+id/activeCausesFrameLayout">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tw_top_donated_causes"
+                    android:id="@+id/activeCausesHeader"
+                    android:layout_gravity="center_horizontal|top"
+                    android:textSize="25dip"
+                    android:textStyle="bold"
+                    android:background="#8d7a7a7a"
+                    android:focusableInTouchMode="false" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/activeCausesFrameLayout"
+                android:id="@+id/listFrame">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/causeList"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:background="@drawable/clickable">
+
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listFrame"
+                android:background="#90ffffff"
+                android:id="@+id/descriptionHeaderFrame">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tw_ngo_description"
+                    android:id="@+id/twNgoDescriptionHeader"
+                    android:layout_gravity="center_horizontal|top"
+                    android:textSize="25dip"
+                    android:textStyle="bold"
+                    android:background="#8d7a7a7a"/>
+            </FrameLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

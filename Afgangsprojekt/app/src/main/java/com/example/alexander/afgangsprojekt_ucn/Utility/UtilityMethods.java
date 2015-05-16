@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 
 import com.example.alexander.afgangsprojekt_ucn.Models.Cause;
 import com.example.alexander.afgangsprojekt_ucn.Models.NGO;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -161,6 +162,31 @@ public class UtilityMethods
             e.printStackTrace();
         }
 
+        return donatedAmount;
+    }
+
+    public static Number GetTotalDonationsForCurrentUser(){
+        double donatedAmount = 0;
+        ParseObject currentUser = ParseUser.getCurrentUser();
+
+        try
+        {
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Donation");
+            query.whereEqualTo("user", currentUser);
+            query.setCachePolicy(ParseQuery.CachePolicy.CACHE_ELSE_NETWORK);
+            query.setMaxCacheAge(TimeUnit.HOURS.toMillis(1));
+            List<ParseObject> donationList = query.find();
+
+            for (ParseObject item : donationList)
+            {
+                donatedAmount += item.getNumber("donationAmount").doubleValue();
+            }
+            return donatedAmount;
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
         return donatedAmount;
     }
 

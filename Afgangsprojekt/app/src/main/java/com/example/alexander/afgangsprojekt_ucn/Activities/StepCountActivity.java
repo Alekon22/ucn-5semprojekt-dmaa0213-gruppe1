@@ -259,6 +259,11 @@ public class StepCountActivity extends Activity
             long endTime = cal.getTimeInMillis();
             cal.set(Calendar.HOUR_OF_DAY, 0);
             long startTime = cal.getTimeInMillis();
+            if (endTime == startTime)
+            {
+                cal.set(Calendar.HOUR_OF_DAY, 1);
+                startTime = cal.getTimeInMillis();
+            }
 
             DataReadRequest readRequest = new DataReadRequest.Builder()
                     .aggregate(DataType.TYPE_STEP_COUNT_DELTA, DataType.AGGREGATE_STEP_COUNT_DELTA)
@@ -297,9 +302,6 @@ public class StepCountActivity extends Activity
 
             return null;
         }
-
-
-
 
     }
 

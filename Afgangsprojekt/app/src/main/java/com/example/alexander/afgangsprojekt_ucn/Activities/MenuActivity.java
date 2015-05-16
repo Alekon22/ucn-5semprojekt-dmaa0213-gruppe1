@@ -41,6 +41,14 @@ public class MenuActivity extends Activity
 
 
 
+        btnMyDonation.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, UserDonationsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         btnSettings.setOnClickListener(new OnClickListener()
