@@ -189,5 +189,27 @@ public class UtilityMethods
         }
         return donatedAmount;
     }
+    public static Number MoneyPerStep (int steps){
+        ParseObject currentUser = ParseUser.getCurrentUser();
+        int moneyPerStep = 0;
+        try
+        {
+            ParseQuery<ParseObject> PublicUserTable = ParseQuery.getQuery("PublicUserProfile");
+            PublicUserTable.whereEqualTo("nonPublicUser", currentUser);
+            ParseObject CompanyTeam = PublicUserTable.get("companyTeam");
+            ParseObject company = CompanyTeam.getParseObject("company");
+            int maxSteps = company.getNumber("maxSteps").intValue();
+            int maxDonation = company.getNumber("maxDonation").intValue();
+            moneyPerStep = (maxSteps / maxDonation) * steps;
+            return moneyPerStep;
+
+
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return moneyPerStep;
+    }
 
 }
