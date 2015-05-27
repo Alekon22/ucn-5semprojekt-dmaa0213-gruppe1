@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.alexander.afgangsprojekt_ucn.Models.ActivityDay;
 import com.example.alexander.afgangsprojekt_ucn.R;
+import com.example.alexander.afgangsprojekt_ucn.Utility.UtilityMethods;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -66,6 +67,7 @@ public class StepCountActivity extends Activity
     Button btnLogoutApp;
 
     TextView tvUserFirstname;
+    TextView tvStepValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -80,6 +82,9 @@ public class StepCountActivity extends Activity
         _stepsTextView = (TextView)findViewById(R.id.textView3);
 
         tvUserFirstname = (TextView)findViewById(R.id.tvUserFirstname);
+        tvStepValue = (TextView)findViewById(R.id.tvStepValue);
+
+
 
 
         buildFitnessClient();
@@ -291,6 +296,7 @@ public class StepCountActivity extends Activity
                                         @Override
                                         public void run() {
                                             _stepsTextView.setText(String.valueOf(_dailySteps));
+                                            tvStepValue.setText(String.valueOf(UtilityMethods.MoneyPerStep(_dailySteps)));
                                         }
                                     });
                                 }
