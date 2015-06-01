@@ -86,7 +86,6 @@ public class StepCountActivity extends Activity
 
 
 
-
         buildFitnessClient();
         new SetDailySteps().execute();
         new QueryFitnessDataForPreviousWeek().execute();
@@ -106,6 +105,7 @@ public class StepCountActivity extends Activity
                 {
                     String userFirstname = parseObject.getString("firstname");
                     tvUserFirstname.setText("Du er logged ind som: " + userFirstname);
+
                 }
 
             }
