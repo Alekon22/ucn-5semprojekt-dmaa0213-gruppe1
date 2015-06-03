@@ -9,6 +9,8 @@ import android.widget.Button;
 
 import com.example.alexander.afgangsprojekt_ucn.Models.Cause;
 import com.example.alexander.afgangsprojekt_ucn.Models.NGO;
+import com.example.alexander.afgangsprojekt_ucn.Models.Steps;
+import com.google.gson.Gson;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -20,8 +22,17 @@ import com.jjoe64.graphview.series.DataPoint;
 
 
 
+import org.json.JSONObject;
+
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Dictionary;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Map;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 public class UtilityMethods
@@ -105,9 +116,9 @@ public class UtilityMethods
         {
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Donation");
             query.whereEqualTo("cause",
-                               cause);
+                    cause);
             query.whereEqualTo("user",
-                               ParseUser.getCurrentUser());
+                    ParseUser.getCurrentUser());
             List<ParseObject> donationList = query.find();
 
             return donationList;
@@ -219,6 +230,47 @@ public class UtilityMethods
             e.printStackTrace();
         }
         return moneyPerStep;
+    }
+
+
+    public static Object ConvertJsonToObject(){
+        Gson gson = new Gson();
+
+
+        try
+        {
+            SimpleDateFormat isoFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm");
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("UserActivity");
+            Calendar cal = Calendar.getInstance();
+            Date now = new Date();
+            cal.setTime(now);
+            cal.set(Calendar.HOUR_OF_DAY, 0);
+            cal.set(Calendar.MINUTE, 0);
+            cal.set(Calendar.SECOND, 0);
+            String dateString = isoFormat.format(cal.getTime());
+
+            Date date = isoFormat.parse(dateString);
+
+            query.whereEqualTo("user", ParseUser.getCurrentUser());
+            query.whereGreaterThanOrEqualTo("activityDate", date);
+            ParseObject usrActivity = query.getFirst();
+
+            Object stepsObj = usrActivity.get("steps");
+
+
+            System.out.println("Test");
+
+            return stepsObj;
+        }
+        catch(ParseException e) {
+            e.printStackTrace();
+        }
+        catch (java.text.ParseException f) {
+            f.printStackTrace();
+        }
+
+
+        return 0;
     }
 
 }

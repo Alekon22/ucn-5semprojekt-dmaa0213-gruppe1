@@ -86,7 +86,7 @@ public class StepCountActivity extends Activity
         tvUserFirstname = (TextView)findViewById(R.id.tvUserFirstname);
         tvStepValue = (TextView)findViewById(R.id.tvStepValue);
 
-
+        Object stepsObject = UtilityMethods.ConvertJsonToObject();
 
 
         buildFitnessClient();
@@ -108,6 +108,7 @@ public class StepCountActivity extends Activity
                 {
                     String userFirstname = parseObject.getString("firstname");
                     tvUserFirstname.setText("Du er logged ind som: " + userFirstname);
+
                 }
 
             }
