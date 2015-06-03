@@ -34,6 +34,8 @@ import com.google.android.gms.fitness.request.DataReadRequest;
 import com.google.android.gms.fitness.request.OnDataPointListener;
 import com.google.android.gms.fitness.request.SensorRequest;
 import com.google.android.gms.fitness.result.DataReadResult;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.BarGraphSeries;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -479,6 +481,18 @@ public class StepCountActivity extends Activity
         }
 
 
+    }
+    public void bar() {
 
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        BarGraphSeries<com.jjoe64.graphview.series.DataPoint> series = new BarGraphSeries<com.jjoe64.graphview.series.DataPoint>(new com.jjoe64.graphview.series.DataPoint[]{
+                new com.jjoe64.graphview.series.DataPoint(0, -1),
+                new com.jjoe64.graphview.series.DataPoint(1, 5),
+                new com.jjoe64.graphview.series.DataPoint(2, 3),
+                new com.jjoe64.graphview.series.DataPoint(3, 2),
+                new com.jjoe64.graphview.series.DataPoint(4, 6)
+
+        });
+        graph.addSeries(series);
     }
 }

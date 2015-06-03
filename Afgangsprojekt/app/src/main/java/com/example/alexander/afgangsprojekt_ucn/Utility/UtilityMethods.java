@@ -2,6 +2,10 @@ package com.example.alexander.afgangsprojekt_ucn.Utility;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.alexander.afgangsprojekt_ucn.Models.Cause;
 import com.example.alexander.afgangsprojekt_ucn.Models.NGO;
@@ -10,6 +14,11 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.BarGraphSeries;
+import com.jjoe64.graphview.series.DataPoint;
+
+
 
 import java.net.URL;
 import java.util.List;
